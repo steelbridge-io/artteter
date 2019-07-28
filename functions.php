@@ -5,6 +5,7 @@
 
 //* Start the engine
 include_once( get_template_directory() . '/lib/init.php');
+include_once 'lib/fishing-reports-cpt.php';
 
 add_action( 'Genesis_setup', 'custom_setup');
 load_child_theme_textdomain( 'custom' );
