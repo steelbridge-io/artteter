@@ -155,3 +155,11 @@ function arts_viewport_meta() {
     echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
 }
 add_action( 'wp_head', 'arts_viewport_meta');
+
+// Add Read More
+// Changing excerpt more
+function new_excerpt_more($more) {
+  global $post;
+  return '… <a href="'. get_permalink($post->ID) . '">' . 'Read More &raquo;' . '</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');

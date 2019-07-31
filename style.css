@@ -27,6 +27,7 @@
 		- Objects
 		- Forms
 		- Tables
+  - Fishing Report Page (N. CA fishing report)
   - Flex Box
 	- Structure and Layout
 		- Site Containers
@@ -466,6 +467,13 @@ td {
 	border-top: 1px solid #ddd;
 	padding: 6px 0;
 	padding: 0.6rem 0;
+}
+
+/* Fishing Report (N. CA fishing report
+---------------------------------------------------------------------------------------------------- */
+#fishing-report-archive {
+	padding-top: 1.618em;
+	padding-bottom: 1.618em;
 }
 
 /* Flex Box

@@ -16,8 +16,8 @@ function fishing_report_loop() {
   
   $args = array(
     'post_type' => 'fishing_report', // enter your custom post type
-    'orderby' => 'menu_order',
-    'order' => 'ASC',
+    'orderby' => 'date',
+    'order' => 'DESC',
     'posts_per_page'=> '12',  // overrides posts per page in theme settings
   );
   $loop = new WP_Query( $args );
@@ -25,14 +25,14 @@ function fishing_report_loop() {
     
     while( $loop->have_posts() ): $loop->the_post(); global $post;
       
-      echo '<div id="testimonials">';
+      echo '<div id="fishing-report-archive">';
       echo '<div class="one-fourth first">';
       echo '<div class="quote-obtuse"><div class="pic">'. get_the_post_thumbnail( $id, array(150,150) ).'</div></div>';
-      echo '<div style="margin-top:20px;line-height:20px;text-align:right;"><cite>'.genesis_get_custom_field( '_cd_client_name' ).'</cite><br />'.genesis_get_custom_field( '_cd_client_title' ).'</div>';
       echo '</div>';
-      echo '<div class="three-fourths" style="border-bottom:1px solid #DDD;">';
-      echo '<h3>' . get_the_title() . '</h3>';
-      echo '<blockquote><p>' . get_the_content() . '</p></blockquote>';
+      echo '<div class="three-fourths" style="border-bottom:1px solid #DDD; margin-bottom:1.618em;">';
+      echo '<a href="' . get_permalink() . '"><h3>' . get_the_title() . '</h3></a>';
+      
+      echo '<p>' . get_the_excerpt() . '</p>';
       echo '</div>';
       echo '</div>';
     
@@ -40,10 +40,9 @@ function fishing_report_loop() {
   
   endif;
   
-  // Outro Text (hard coded)
-  echo '<div class="call-to-action">Want to get on the water with Art? <a href="http://www.artteter.com/contact/">Let him know you are interested!</a></div>';
   echo '</div><!-- end .entry-content -->';
   echo '</div><!-- end .page .hentry .entry -->';
+  echo '<div class="call-to-action" style="text-align:center;margin-bottom:5em;"><h3>Want to get on the water with Art? <a href="http://www.artteter.com/contact/">Let him know you are interested!</h3></a></div>';
 }
 
 /** Remove Post Info */
